@@ -47,7 +47,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             // If the user is not signed in, initiate the login process
             msalInstance.initialize();
         }
-    });
+    },[]);
 
     return (
         <React.Suspense fallback={<div className='flex items-center justify-center w-screen h-screen'><Spinner/></div>}>
