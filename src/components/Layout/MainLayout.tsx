@@ -5,8 +5,10 @@ import {
   HomeIcon,
   Bars4Icon,
  // UsersIcon,
+  ChevronDoubleLeftIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+
 import clsx from 'clsx';
 import * as React from 'react';
 import { NavLink, Link } from 'react-router-dom';
@@ -20,11 +22,11 @@ type SideNavigationItem = {
   icon: (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
 };
 
-const SideNavigation = () => {
+const SideNavigation = ({expanded}: {expanded: boolean}) => {
   //const { checkAccess } = useAuthorization();
   const navigation = [
     { name: 'Dashboard', to: '.', icon: HomeIcon },
-    { name: 'Discussions', to: './discussions', icon: FolderIcon },
+    { name: 'Definitions', to: './definitions', icon: FolderIcon },
     // checkAccess({ allowedRoles: [ROLES.ADMIN] }) && {
     //   name: 'Users',
     //   to: './users',
@@ -40,18 +42,20 @@ const SideNavigation = () => {
           key={item.name}
           to={item.to}
           className={clsx(
-            'text-gray-300 hover:bg-gray-700 hover:text-white',
-            'group flex items-center px-2 py-2 text-base font-medium rounded-md'
+            'text-primary hover:bg-primary hover:text-secondary',
+            'group flex items-stretch px-2 py-3 text-base font-medium rounded-md overflow-hidden'
           )}
         >
           <item.icon
             className={clsx(
-              'text-gray-400 group-hover:text-gray-300',
-              'mr-4 flex-shrink-0 h-6 w-6'
+              'text-primary group-hover:text-secondary',
+              'mr-4 h-6 w-6 max-w-12 min-w-12'
             )}
             aria-hidden="true"
           />
-          {item.name}
+          <span className = {clsx('transition-opacity duration-200 delay-200 ease-right', expanded ? 'opacity-100 visible' : 'opacity-0 invisible w-0')}>
+            { item.name}
+          </span>
         </NavLink>
       ))}
     </>
@@ -84,9 +88,9 @@ const UserNavigation = () => {
       {({ open }) => (
         <>
           <div>
-            <Menu.Button className="max-w-xs  bg-gray-200 p-2 flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <Menu.Button className="max-w-xs  bg-foreground  p-2 flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <span className="sr-only">Open user menu</span>
-              <UserIcon className="h-8 w-8 rounded-full" />
+              <UserIcon className="h-8 w-8 rounded-full text-accent" />
             </Menu.Button>
           </div>
           <Transition
@@ -131,6 +135,7 @@ type MobileSidebarProps = {
   sidebarOpen: boolean;
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
 
 const MobileSidebar = ({ sidebarOpen, setSidebarOpen }: MobileSidebarProps) => {
   return (
@@ -198,18 +203,28 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }: MobileSidebarProps) => {
   );
 };
 
+type NavbarCollapseProps = {
+  onClick: () => void;
+};
+
 const Sidebar = () => {
+  const [sidebarOpen, setSidebarOpen] = React.useState(true);
   return (
     <div className="hidden md:flex md:flex-shrink-0">
-      <div className="flex flex-col w-64">
-        <div className="flex flex-col h-0 flex-1">
-          <div className="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
-            <Logo />
+      <div className={clsx("flex flex-col border-r-2 border-accent transition-width duration-300 ease",
+         sidebarOpen ? 'w-48' : 'w-20'
+      )}>
+        <div className="flex-1 flex-col h-0 relative">
+          <div className="flex items-center  h-16 px-2 bg-background border-bo">
+            <Logo expanded={sidebarOpen}/>
           </div>
-          <div className="flex-1 flex flex-col overflow-y-auto">
-            <nav className="flex-1 px-2 py-4 bg-gray-800 space-y-1">
-              <SideNavigation />
+          <div className="flex-1 flex flex-col overflow-y-auto ">
+            <nav className="flex-1 px-2 items-center py-4 bg-background space-y-1">
+              <SideNavigation expanded={sidebarOpen} />
             </nav>
+          </div>
+          <div className ="flex-1 flex flex-col absolute bottom-3 right-3">
+            <NavCollapse onClick={ () =>{setSidebarOpen(!sidebarOpen)} }/>
           </div>
         </div>
       </div>
@@ -217,14 +232,31 @@ const Sidebar = () => {
   );
 };
 
-const Logo = () => {
+const Logo = ({expanded}: {expanded: boolean}) => {
   return (
-    <Link className="flex items-center text-white" to=".">
-      <img className="h-8 w-auto" src={logo} alt="Workflow" />
-      <span className="text-xl text-white font-semibold">Spawn</span>
+    <Link className={clsx(
+      'text-primary',
+      'group flex items-stretch px-2 py-3 text-base font-medium rounded-md'
+      )} to=".">
+        
+      <img className={clsx(
+              'text-primary group-hover:text-secondary',
+              'mr-4 h-6 w-6 max-w-12 min-w-12'
+            )} src={logo} alt="Workflow" />
+      <span className={clsx('transition-all duration-200 delay-200 ease-right',expanded ? 'opacity-100 visible' : 'opacity-0 delay-0 invisible w-0')}>Spawn</span>
     </Link>
   );
 };
+
+const NavCollapse = ({onClick}: NavbarCollapseProps) => {
+  return (
+    <div className="flex flex-col h-0 flex-1 overflow-y-auto">
+      <button onClick={onClick}>
+      <ChevronDoubleLeftIcon className="h-8 w-8 text-primary"  aria-hidden="true" />
+      </button>
+      </div>
+  );
+}
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -234,13 +266,13 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   return (
-    <div className="h-screen flex overflow-hidden bg-gray-100">
+    <div className="h-screen flex overflow-hidden bg-background">
       <MobileSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Sidebar />
       <div className="flex flex-col w-0 flex-1 overflow-hidden">
-        <div className="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
+        <div className="relative z-10 flex-shrink-0 flex h-16 bg-background shadow">
           <button
-            className="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+            className="px-4 border-r border-gray-200 text-slate-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
             onClick={() => setSidebarOpen(true)}
           >
             <span className="sr-only">Open sidebar</span>

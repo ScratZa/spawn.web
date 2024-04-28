@@ -1,1 +1,1 @@
-export * from './routes/Definitions';
+export * from './routes';

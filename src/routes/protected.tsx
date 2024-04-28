@@ -12,7 +12,7 @@ import { lazyImport } from '@/utils/lazyImport';
 // const { Dashboard } = lazyImport(() => import('@/features/misc'), 'Dashboard');
 // const { Profile } = lazyImport(() => import('@/features/users'), 'Profile');
 // const { Users } = lazyImport(() => import('@/features/users'), 'Users');
-const { Definitions } =  lazyImport(() => import('@/features/jobs'), 'Definitions');
+const { DefinitionRoutes } =  lazyImport(() => import('@/features/jobs'), 'DefinitionRoutes');
 const App = () => {
   return (
     <MainLayout>
@@ -34,7 +34,7 @@ export const protectedRoutes = [
     path: '/app',
     element: <App />,
     children: [
-      { path: '/app/jobs', element: <Definitions /> }
+      { path: '/app/definitions/*', element: <DefinitionRoutes /> }
     ],
   },
 ];

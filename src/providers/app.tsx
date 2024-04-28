@@ -54,7 +54,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
          <ErrorBoundary FallbackComponent={onErrorFallback}>
              <HelmetProvider>
                  <QueryClientProvider client={queryClient}>
-                 {process.env.NODE_ENV !== 'test' && <ReactQueryDevtools initialIsOpen={false} />}
+                 {process.env.NODE_ENV !== 'test' && <ReactQueryDevtools position='bottom-right' initialIsOpen={false} />}
                     <Notifications />
                          <Router>
                             <MsalProvider instance={msalInstance}>
