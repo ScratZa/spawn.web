@@ -204,6 +204,7 @@ const MobileSidebar = ({ sidebarOpen, setSidebarOpen }: MobileSidebarProps) => {
 };
 
 type NavbarCollapseProps = {
+  expanded: boolean;
   onClick: () => void;
 };
 
@@ -224,7 +225,7 @@ const Sidebar = () => {
             </nav>
           </div>
           <div className ="flex-1 flex flex-col absolute bottom-3 right-3">
-            <NavCollapse onClick={ () =>{setSidebarOpen(!sidebarOpen)} }/>
+            <NavCollapse expanded={sidebarOpen} onClick={ () =>{setSidebarOpen(!sidebarOpen)} }/>
           </div>
         </div>
       </div>
@@ -248,11 +249,12 @@ const Logo = ({expanded}: {expanded: boolean}) => {
   );
 };
 
-const NavCollapse = ({onClick}: NavbarCollapseProps) => {
+const NavCollapse = ({expanded, onClick}: NavbarCollapseProps) => {
+  const iconCass = clsx("h-8 w-8 text-primary", expanded ? 'rotate-180' : '');
   return (
     <div className="flex flex-col h-0 flex-1 overflow-y-auto">
       <button onClick={onClick}>
-      <ChevronDoubleLeftIcon className="h-8 w-8 text-primary"  aria-hidden="true" />
+       <ChevronDoubleLeftIcon className={iconCass}  aria-hidden="true" />
       </button>
       </div>
   );

@@ -59,7 +59,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
                          <Router>
                             <MsalProvider instance={msalInstance}>
                             <MsalAuthenticationTemplate interactionType={InteractionType.Redirect}>
-
                              {children}
                              </MsalAuthenticationTemplate>
                             </MsalProvider>
