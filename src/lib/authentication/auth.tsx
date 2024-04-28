@@ -4,6 +4,7 @@ import {
     EventMessage,
     AuthenticationResult,
 } from "@azure/msal-browser";
+
 import { msalConfig } from "./msalconfig";
 
 const msalInstance = new PublicClientApplication(msalConfig);
