@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AxiosError } from 'axios';
 import { QueryClient, UseQueryOptions, UseMutationOptions, DefaultOptions } from 'react-query';
 import { PromiseValue } from 'type-fest';

@@ -48,6 +48,10 @@ export const loginRequest = {
     scopes: ["Files.Read"],
 };
 
+export const jobsServer = {
+    clientId: 'db78efdd-bcf8-4045-b4d8-598c232ecc59',
+    scopes: ['api://db78efdd-bcf8-4045-b4d8-598c232ecc59/access_as_user'],
+}
 
 /**
  * An optional silentRequest object can be used to achieve silent SSO

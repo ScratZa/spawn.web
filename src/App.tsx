@@ -5,7 +5,7 @@ import { AppRoutes } from "./routes";
 const App = () => {
   return (
     <AppProvider>
-      <ThemeProvider defaultTheme="light" storage-key="spawn-ui-theme">
+      <ThemeProvider defaultTheme="dark" storage-key="spawn-ui-theme">
       <AppRoutes />
       </ThemeProvider>
     </AppProvider>
