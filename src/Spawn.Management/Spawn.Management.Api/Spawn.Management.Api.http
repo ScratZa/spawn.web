@@ -1,0 +1,6 @@
+@Spawn.Management.Api_HostAddress = http://localhost:5283
+
+GET {{Spawn.Management.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
