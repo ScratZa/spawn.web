@@ -1,0 +1,57 @@
+# Ignore Visual Studio / Rider / IntelliJ files
+**/.vs/
+**/*.suo
+**/*.user
+**/*.userosscache
+**/*.sln.docstates
+.vs/
+# Ignore Rider
+**/.idea/
+
+# Ignore ReSharper
+**/_ReSharper*/
+**/*.[Rr]e[Ss]harper
+
+# Ignore DotCover
+**/*.dotCover
+
+# Ignore NCrunch
+**/_NCrunch_*
+**/*.ncrunch*
+**/.*crunch*.local.xml
+
+# Ignore TestResults
+**/[Tt]est[Rr]esult*/
+**/[Bb]uild[Ll]og.*
+
+# Ignore Resharper
+**/_ReSharper*/
+**/*.[Rr]e[Ss]harper
+**/*.DotSettings.user
+
+# Ignore Visual Studio Code
+**/.vscode/
+
+# Ignore NuGet Packages
+**/*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/**/packages/build/
+# Uncomment if you have tasks that create the project's static files in wwwroot
+#wwwroot/
+
+# Ignore MSTest test Results
+**/[Tt]est[Rr]esult*/
+
+# Custom
+**/*.log
+**/*.rptproj.bak
+
+# Ignore bin and obj directories
+**/bin/
+**/obj/
+
+# Ignore Rider
+**/.idea/
+**/*.sln.iml

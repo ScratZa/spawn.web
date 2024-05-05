@@ -6,7 +6,7 @@ import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
 import { Job } from '../types';
 
 export const getJobs = (): Promise<Job[]> => {
-  return axios.get('/jobs');
+  return axios.get('/Jobs');
 };
 
 type QueryFnType = typeof getJobs;
@@ -18,7 +18,7 @@ type UseJobsOptions = {
 export const useJobs = ({ config }: UseJobsOptions = {}) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     ...config,
-    queryKey: ['jobs'],
+    queryKey: ['Jobs'],
     queryFn: () => getJobs(),
   });
 };
