@@ -6,4 +6,24 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+    <Folder Include="Behaviours\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spawn.Management.Domain\Spawn.Management.Domain.csproj" />
+    <ProjectReference Include="..\Spawn.Management.Infrastructure\Spawn.Management.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

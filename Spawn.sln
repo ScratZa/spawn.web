@@ -7,35 +7,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2E8F45D9-CD8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spawn.Management", "Spawn.Management", "{9CDB4807-9E40-4396-9A3F-7E46808740B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Management.Infrastructure", "src\Spawn.Management\Spawn.Management.Infrastructure\Spawn.Management.Infrastructure.csproj", "{67823B1A-0E83-4FFF-AD29-4B6E91892E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Management.Infrastructure", "src\Spawn.Management\Spawn.Management.Infrastructure\Spawn.Management.Infrastructure.csproj", "{67823B1A-0E83-4FFF-AD29-4B6E91892E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Management.Domain", "src\Spawn.Management\Spawn.Management.Domain\Spawn.Management.Domain.csproj", "{8A5B7C9E-6E6A-4AFB-B7CB-65D2E021156E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Management.Domain", "src\Spawn.Management\Spawn.Management.Domain\Spawn.Management.Domain.csproj", "{8A5B7C9E-6E6A-4AFB-B7CB-65D2E021156E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Management.Application", "src\Spawn.Management\Spawn.Management.Application\Spawn.Management.Application.csproj", "{CB48F6E4-49DE-4CEA-979D-B5ACD5DBFC7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Management.Application", "src\Spawn.Management\Spawn.Management.Application\Spawn.Management.Application.csproj", "{CB48F6E4-49DE-4CEA-979D-B5ACD5DBFC7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Management.Api", "src\Spawn.Management\Spawn.Management.Api\Spawn.Management.Api.csproj", "{751650A6-317B-4011-8A6E-1A9A0755DE6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Management.Api", "src\Spawn.Management\Spawn.Management.Api\Spawn.Management.Api.csproj", "{751650A6-317B-4011-8A6E-1A9A0755DE6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spawn.Common", "Spawn.Common", "{C08EFB64-A573-426C-9F5A-703017CFD00D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Audit", "src\Spawn.Common\Spawn.Common.Audit\Spawn.Common.Audit.csproj", "{AFF39C93-FD19-4EAC-825E-2086B7F96DC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Domain", "src\Spawn.Common\Spawn.Common.Audit\Spawn.Common.Domain.csproj", "{AFF39C93-FD19-4EAC-825E-2086B7F96DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Logging", "src\Spawn.Common\Spawn.Common.Logging\Spawn.Common.Logging.csproj", "{81117039-05CB-4873-B3BC-C4B5FB90B2D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Logging", "src\Spawn.Common\Spawn.Common.Logging\Spawn.Common.Logging.csproj", "{81117039-05CB-4873-B3BC-C4B5FB90B2D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Monitoring", "src\Spawn.Common\Spawn.Common.Monitoring\Spawn.Common.Monitoring.csproj", "{8F2DAFDB-FDE5-47AB-ADC0-8D25F7C5C8DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Monitoring", "src\Spawn.Common\Spawn.Common.Monitoring\Spawn.Common.Monitoring.csproj", "{8F2DAFDB-FDE5-47AB-ADC0-8D25F7C5C8DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Security", "src\Spawn.Common\Spawn.Common.Security\Spawn.Common.Security.csproj", "{1AC85A12-5C44-4295-B179-827AB6EED9D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Security", "src\Spawn.Common\Spawn.Common.Security\Spawn.Common.Security.csproj", "{1AC85A12-5C44-4295-B179-827AB6EED9D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Exceptions", "src\Spawn.Common\Spawn.Common.Exceptions\Spawn.Common.Exceptions.csproj", "{DE1DC5DC-A4B3-4CDC-B56C-E17221D3CC29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Exceptions", "src\Spawn.Common\Spawn.Common.Exceptions\Spawn.Common.Exceptions.csproj", "{DE1DC5DC-A4B3-4CDC-B56C-E17221D3CC29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spawn.Common.Notifications", "src\Spawn.Common\Spawn.Common.Notifications\Spawn.Common.Notifications.csproj", "{A3D9D163-6D99-41C8-B7BB-166A19467D84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spawn.Common.Notifications", "src\Spawn.Common\Spawn.Common.Notifications\Spawn.Common.Notifications.csproj", "{A3D9D163-6D99-41C8-B7BB-166A19467D84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{67823B1A-0E83-4FFF-AD29-4B6E91892E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -79,6 +76,9 @@ Global
 		{A3D9D163-6D99-41C8-B7BB-166A19467D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3D9D163-6D99-41C8-B7BB-166A19467D84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9CDB4807-9E40-4396-9A3F-7E46808740B1} = {2E8F45D9-CD80-4E40-98E7-A3AFEAEFA5E1}
 		{67823B1A-0E83-4FFF-AD29-4B6E91892E64} = {9CDB4807-9E40-4396-9A3F-7E46808740B1}
@@ -92,5 +92,8 @@ Global
 		{1AC85A12-5C44-4295-B179-827AB6EED9D6} = {C08EFB64-A573-426C-9F5A-703017CFD00D}
 		{DE1DC5DC-A4B3-4CDC-B56C-E17221D3CC29} = {C08EFB64-A573-426C-9F5A-703017CFD00D}
 		{A3D9D163-6D99-41C8-B7BB-166A19467D84} = {C08EFB64-A573-426C-9F5A-703017CFD00D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDC80002-183D-4BF1-A524-40E4C35D7008}
 	EndGlobalSection
 EndGlobal

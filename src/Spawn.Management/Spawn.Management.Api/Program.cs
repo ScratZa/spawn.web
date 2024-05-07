@@ -5,6 +5,11 @@ using Microsoft.Identity.Abstractions;
 using Microsoft.Identity.Web.Resource;
 using Microsoft.Extensions.Configuration;
 using Microsoft.FeatureManagement;
+using Spawn.Management.Infrastructure;
+using Spawn.Management.Application;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Spawn.Management.Infrastructure.Persistance;
 
 namespace Spawn.Management.Api;
 
@@ -22,6 +27,22 @@ public class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.Configure<CosmosSettings>(builder.Configuration.GetSection(nameof(CosmosSettings)));
+
+        builder.Services.AddDbContextFactory<WorkflowContext>(
+                               (IServiceProvider sp, DbContextOptionsBuilder opts) =>
+                               {
+                                   var cosmosSettings = sp
+                                       .GetRequiredService<IOptions<CosmosSettings>>()
+                                       .Value;
+
+                                   opts.UseCosmos(
+                                       cosmosSettings.EndPoint,
+                                       cosmosSettings.AccessKey,
+                                       nameof(WorkflowContext));
+                               });
+
         builder.Services.AddFeatureManagement(builder.Configuration.GetSection("MyFeatureFlags"));
         builder.Services.AddCors(options =>
         {
@@ -33,6 +54,7 @@ public class Program
             });
         });
 
+        builder.Services.AddApplicationServices();
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
