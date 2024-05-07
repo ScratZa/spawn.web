@@ -1,5 +1,5 @@
 # Ignore Visual Studio / Rider / IntelliJ files
-**/.vs/
+.vs/
 **/*.suo
 **/*.user
 **/*.userosscache
@@ -30,7 +30,7 @@
 **/*.DotSettings.user
 
 # Ignore Visual Studio Code
-**/.vscode/
+.vscode/
 
 # Ignore NuGet Packages
 **/*.nupkg
@@ -49,8 +49,8 @@
 **/*.rptproj.bak
 
 # Ignore bin and obj directories
-**/bin/
-**/obj/
+bin/
+obj/
 
 # Ignore Rider
 **/.idea/
