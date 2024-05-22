@@ -3,8 +3,6 @@ import {
   UserIcon,
   FolderIcon,
   HomeIcon,
-  Bars4Icon,
- // UsersIcon,
   ChevronDoubleLeftIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';

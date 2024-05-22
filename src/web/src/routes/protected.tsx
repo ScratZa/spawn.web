@@ -14,6 +14,7 @@ import { lazyImport } from '@/utils/lazyImport';
 // const { Users } = lazyImport(() => import('@/features/users'), 'Users');
 const { DefinitionRoutes } =  lazyImport(() => import('@/features/jobs'), 'DefinitionRoutes');
 const { WorkflowRoutes } = lazyImport(() => import('@/features/workflows'), 'WorkflowRoutes');
+const { KustoRoutes } = lazyImport(() => import('@/features/kusto'), 'KustoRoutes');
 const App = () => {
   return (
     <MainLayout>
