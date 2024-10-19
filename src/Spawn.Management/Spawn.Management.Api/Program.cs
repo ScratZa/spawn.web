@@ -10,6 +10,7 @@ using Spawn.Management.Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Spawn.Management.Infrastructure.Persistance;
+using Spawn.Common.Logging.Extensions;
 
 namespace Spawn.Management.Api;
 
@@ -18,7 +19,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.Services.UseSpawnLogger(builder.Configuration);
         // Add services to the container.
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));

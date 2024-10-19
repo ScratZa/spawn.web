@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Spawn.Common\Spawn.Common.Logging\Spawn.Common.Logging.csproj" />
     <ProjectReference Include="..\Spawn.Management.Application\Spawn.Management.Application.csproj" />
     <ProjectReference Include="..\Spawn.Management.Infrastructure\Spawn.Management.Infrastructure.csproj" />
   </ItemGroup>
